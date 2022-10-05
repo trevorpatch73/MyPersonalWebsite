@@ -6,8 +6,6 @@ import secrets
 import os
 import sys
 
-app = Flask(__name__)
-
 def create_app():
     app = Flask(__name__)
     app.config['SECRET_KEY'] = str(secrets.token_hex(128))
