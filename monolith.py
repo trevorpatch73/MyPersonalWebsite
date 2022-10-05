@@ -6,11 +6,8 @@ import secrets
 import os
 import sys
 
-def create_app():
-    app = Flask(__name__)
-    app.config['SECRET_KEY'] = str(secrets.token_hex(128))
-
-    return app
+app = Flask(__name__)
+app.config['SECRET_KEY'] = str(secrets.token_hex(128))
 
 @app.route("/")
 def index():
@@ -50,8 +47,6 @@ def sendemail():
         except:
             pass
     return redirect('/');
-
-app = create_app()
 
 if __name__ == "__main__":
     app.run(debug=True)
