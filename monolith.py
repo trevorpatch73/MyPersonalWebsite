@@ -10,6 +10,8 @@ def create_app():
     app = Flask(__name__)
     app.config['SECRET_KEY'] = str(secrets.token_hex(128))
 
+    return app
+
 @app.route("/")
 def index():
     return render_template("index.html")
